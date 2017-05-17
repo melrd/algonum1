@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1495026897 source:c:\users\mél\dropbox\l3\l - algo num\algonum1\tp1 - equation second degre\equ.cpp
+	<iostream>
+	"equ.h"
+
+1495031081 c:\users\mél\dropbox\l3\l - algo num\algonum1\tp1 - equation second degre\equ.h
+	<iostream>
+	<cmath>
+
+1495030365 source:c:\users\mél\dropbox\l3\l - algo num\algonum1\tp1 - equation second degre\main.cpp
+	<iostream>
+	"equ.h"
+

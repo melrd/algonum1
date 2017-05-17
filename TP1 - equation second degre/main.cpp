@@ -5,16 +5,30 @@ using namespace std;
 
 int main()
 {
-    equation</*votre choix*/> equ(1.E-8,0.08,1.E-8);  // 10^-8 = 1.E-8
+    cout << "----------------------- Simple precision ----------------------- " << endl;
+    equation<float> equ(1.E-8,0.08,1.E-8);  // 10^-8 = 1.E-8
+    cout << "----------------------- Methode naive ----------------------- " << endl;
+    equ.naiveSolve();
+    cout << equ <<endl ;
+    cout << "----------------------- Methode maligne ----------------------- " << endl;
+    equ.cleverSolve();
+    cout << equ <<endl ;
 
 
-    // faire une résolution naïve
-
-    // et afficher le résultat
-
-    // faire une résolution maline
-
-    // et afficher le résultat
-
+    cout << "----------------------- Double precision ----------------------- " << endl;
+    equation<double> equ2(1.E-8,0.08,1.E-8);  // 10^-8 = 1.E-8
+    cout << "----------------------- Methode naive ----------------------- " << endl;
+    equ2.naiveSolve();
+    cout << equ2 <<endl ;
+    cout << "----------------------- Methode maligne ----------------------- " << endl;
+    equ2.cleverSolve();
+    cout << equ2 <<endl ;
     return 0;
 }
+/*
+ l8 : crée objet equation en 32 bit
+  méthode
+ puis iEEE757 : objet en double
+ e objet avec meme paramétrage
+ comparer les affichages
+*/

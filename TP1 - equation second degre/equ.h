@@ -57,25 +57,24 @@ template <typename T> equation<T>::equation(T pa, T pb, T pc):a(pa),b(pb),c(pc)
 template <typename T> ostream& operator<<(ostream& os,const equation<T> &e)
 {
     os << e.a <<"x^2 + " << e.b << "x + " << e.c;
-    os << endl << "x1 =" << e.x1 << endl << "x^2 =" << e.x2 << endl;
+    os << endl << "x1 = " << e.x1 << endl << "x^2 = " << e.x2 << endl;
     return os;
 }
 
 template <typename T> void equation<T>::naiveSolve()
 {
-    double delta = b*b - 4.0*a*c;
+    T delta = b*b - 4*a*c;
 
     if (delta > 0)
     {
-        double x1 = (-b-sqrt(delta))/(2*a);
-        double x2 = (-b+sqrt(delta))/(2*a);
-        cout << "Il y a 2 solutions, x1 = " << x1 << "x2 = " << x2 << endl;
+        x1 = (-b-sqrt(delta))/(2*a);
+        x2 = (-b+sqrt(delta))/(2*a);
     }
 
     else if (delta == 0)
     {
-        double x = - b / 2*a;
-        cout << "il y a 1  solution, x = " << x << endl;
+        x1 = - b / 2*a;
+        x2=x1;
     }
 
     else
@@ -86,20 +85,16 @@ template <typename T> void equation<T>::naiveSolve()
 
 template <typename T> void equation<T>::cleverSolve()
 {
-    double delta = b*b - 4.0*a*c;
+    T delta = b*b - 4.0*a*c;
 
     if (delta > 0)
     {
-        double x1 = (-b-sqrt(delta))/(2*a);
-        double x2 = c / (a * x1);
-        cout << "Il y a 2 solutions, x1 = " << x1 << "x2 = " << x2 << endl;
+        x1 = (-b-sqrt(delta))/(2*a);
+        x2 = c / (a * x1);
     }
 
     else if (delta == 0)
-    {
-        double x = - b / 2*a;
-        cout << "il y a 1  solution, x = " << x << endl;
-    }
+        x1 = - b / 2*a;
 
     else
         cout << "Il n y a pas de solution" << endl;
