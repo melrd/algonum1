@@ -15,21 +15,22 @@ template <typename T> ostream& operator<<(ostream&, const equation<T> &);
 
 template <typename T> class equation
 {
-private :
+private : // déclare variable
     T a,b,c;
     T x1,x2;
 public :
+    //constructeurs
     equation();
     equation(T, T, T);
 
+    // destructeurs
     ~equation();
 
     friend ostream& operator<< <T>(ostream& os, const equation<T>&);
 
     void naiveSolve();
     void cleverSolve();
-   
- 
+
 };
 
 // template method implementation
@@ -37,17 +38,19 @@ public :
 
 template <typename T> equation<T>::equation()
 {
+    //constructeurs null
     a = b = c = (T)0;
     x1 = x2 = (T)0;
 }
 
 template <typename T> equation<T>::~equation()
 {
-
+    // destructeurs
 }
 
 template <typename T> equation<T>::equation(T pa, T pb, T pc):a(pa),b(pb),c(pc)
 {
+    // constructeurs prenant en compte les variables
 
 }
 
@@ -60,15 +63,46 @@ template <typename T> ostream& operator<<(ostream& os,const equation<T> &e)
 
 template <typename T> void equation<T>::naiveSolve()
 {
-    // implement here the classical solving algorithm
-    /* A vous de jouer */
+    double delta = b*b - 4.0*a*c;
+
+    if (delta > 0)
+    {
+        double x1 = (-b-sqrt(delta))/(2*a);
+        double x2 = (-b+sqrt(delta))/(2*a);
+        cout << "Il y a 2 solutions, x1 = " << x1 << "x2 = " << x2 << endl;
+    }
+
+    else if (delta == 0)
+    {
+        double x = - b / 2*a;
+        cout << "il y a 1  solution, x = " << x << endl;
+    }
+
+    else
+        cout << "Il n y a pas de solution" << endl;
+
 }
 
- 
+
 template <typename T> void equation<T>::cleverSolve()
 {
-    // implement here the clever solving algorithm
-     /* A vous de jouer */
+    double delta = b*b - 4.0*a*c;
+
+    if (delta > 0)
+    {
+        double x1 = (-b-sqrt(delta))/(2*a);
+        double x2 = c / (a * x1);
+        cout << "Il y a 2 solutions, x1 = " << x1 << "x2 = " << x2 << endl;
+    }
+
+    else if (delta == 0)
+    {
+        double x = - b / 2*a;
+        cout << "il y a 1  solution, x = " << x << endl;
+    }
+
+    else
+        cout << "Il n y a pas de solution" << endl;
 }
 
 
