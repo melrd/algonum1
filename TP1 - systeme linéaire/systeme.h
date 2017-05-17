@@ -20,7 +20,6 @@ template <typename T> class Systeme
         long    _size;
 
         T*      _solution;
-
         long    *_permut;
 
         void alloueSysteme(long);

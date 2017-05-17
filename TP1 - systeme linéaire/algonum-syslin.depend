@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1495026967 source:c:\users\mél\dropbox\l3\l - algo num\algonum1\tp1 - systeme linéaire\fraction.cpp
+	<iostream>
+	<cstdlib>
+	<iomanip>
+	"fraction.h"
+
+1495026979 c:\users\mél\dropbox\l3\l - algo num\algonum1\tp1 - systeme linéaire\fraction.h
+	<iostream>
+
+1495026985 source:c:\users\mél\dropbox\l3\l - algo num\algonum1\tp1 - systeme linéaire\main.cpp
+	<iostream>
+	"fraction.h"
+	"systeme.h"
+	"systeme.tpp.h"
+
+1495036875 c:\users\mél\dropbox\l3\l - algo num\algonum1\tp1 - systeme linéaire\systeme.h
+	<iostream>
+
+1495043127 c:\users\mél\dropbox\l3\l - algo num\algonum1\tp1 - systeme linéaire\systeme.tpp.h
+	<iostream>
+	<cmath>
+

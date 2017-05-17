@@ -50,7 +50,6 @@ template <typename T> equation<T>::~equation()
 
 template <typename T> equation<T>::equation(T pa, T pb, T pc):a(pa),b(pb),c(pc)
 {
-    // constructeurs prenant en compte les variables
 
 }
 
